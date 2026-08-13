@@ -1,4 +1,4 @@
-import { FAQItem } from "@/components/cart/FaqItem";
+import { FAQItem } from "@/components/card/FaqItem";
 import { faq } from "@/constants/faq";
 
 export default function FaqPage() {
