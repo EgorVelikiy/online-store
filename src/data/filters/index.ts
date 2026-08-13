@@ -4,10 +4,8 @@ import { boxes } from '@/data/products/boxes';
 import { ProductType } from '@/types/product';
 import { accessoriesFilters } from './accessoriesFilters';
 import { fillerFilters } from './fillerFilters';
-import { packagesFilters } from './packagesFilters';
 import { ribbonFilters } from './ribbonFilters';
 import { tissueFilters } from './tissueFilters';
-import { packages } from '../products/packages';
 import { tissue } from '../products/tissue';
 import { filler } from '../products/filler';
 
@@ -24,11 +22,11 @@ export const catalogConfig = {
     products: boxes,
   },
 
-  packages: {
-    title: 'Пакеты',
-    filters: packagesFilters,
-    products: packages,
-  },
+  // packages: {
+  //   title: 'Пакеты',
+  //   filters: packagesFilters,
+  //   products: packages,
+  // },
 
   tissue: {
     title: 'Бумага тишью',

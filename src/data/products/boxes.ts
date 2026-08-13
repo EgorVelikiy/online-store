@@ -100,7 +100,7 @@ export const boxes: ProductType[] = [
     slug: 'korobka-s-otkidnoi-kryshkoi-14,8x5,5x4-white',
     title: 'Коробка с откидной крышкой 14,8x5,5x4 см белая',
     images: ['/bestSellers/14.8x5.5x4_white.jpg'],
-    imagePreview: '/BestSellers/14.8x5.5x4_white.jpg',
+    imagePreview: '/bestSellers/14.8x5.5x4_white.jpg',
     price: 12.89,
     currency: '₽',
     category: 'boxes',
