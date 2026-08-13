@@ -1,10 +1,10 @@
 export type BoxSizesType = {
   l: number;
   w: number;
-  h: number;
+  h?: number;
 }
 
-export type ProductCategory = 'boxes' | 'bags' | 'filler' | 'tissue' | 'ribbons';
+export type ProductCategory = 'boxes' | 'packages' | 'filler' | 'tissue' | 'ribbons';
 
 export type ProductMaterial = 
   | 'paperboard'
@@ -16,12 +16,6 @@ export type ProductMaterial =
   | 'textile'
   | 'organza'
   | 'jute';
-
-export type ProductColor = 
-  | 'brown'
-  | 'white'
-  | 'black'
-  | 'color';
 
 export type ProductType = {
   id: string;
@@ -46,6 +40,7 @@ export type ProductType = {
 
   colorId: string;
 
+  color: string;
 
   cover?: 'hinged' | 'separate' | 'window'
 
@@ -53,5 +48,5 @@ export type ProductType = {
 
   isPopular?: boolean;
 
-  description: string;
+  description?: string;
 };

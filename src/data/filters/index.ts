@@ -7,6 +7,9 @@ import { fillerFilters } from './fillerFilters';
 import { packagesFilters } from './packagesFilters';
 import { ribbonFilters } from './ribbonFilters';
 import { tissueFilters } from './tissueFilters';
+import { packages } from '../products/packages';
+import { tissue } from '../products/tissue';
+import { filler } from '../products/filler';
 
 export type CatalogConfigType = {
   title: string;
@@ -16,7 +19,7 @@ export type CatalogConfigType = {
 
 export const catalogConfig = {
   boxes: {
-    title: 'Картонные коробки',
+    title: 'Самосборные картонные коробки',
     filters: boxFilters,
     products: boxes,
   },
@@ -24,19 +27,19 @@ export const catalogConfig = {
   packages: {
     title: 'Пакеты',
     filters: packagesFilters,
-    products: [],
+    products: packages,
   },
 
   tissue: {
     title: 'Бумага тишью',
     filters: tissueFilters,
-    products: [],
+    products: tissue,
   },
 
   filler: {
     title: 'Бумажный наполнитель',
     filters: fillerFilters,
-    products: [],
+    products: filler,
   },
 
   ribbons: {

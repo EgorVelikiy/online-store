@@ -2,24 +2,45 @@
 
 import { useState, type FormEvent } from 'react';
 import { CustomSizeFormField } from './CustomSizeFormField';
+import { CustomBoxData } from '@/types/order';
 
-type SizeFields = {
+export type SizeFields = {
     length: string;
     width: string;
     height: string;
+    cover: string;
 };
 
-const initialValues: SizeFields = {
+type CoverType = CustomBoxData['cover'];
+
+const initialValues: CustomBoxData = {
     length: '',
     width: '',
     height: '',
+    cover: '',
 };
 
-export default function CustomSizeForm() {
-    const [values, setValues] = useState<SizeFields>(initialValues);
+type CustomSizeFormProps = {
+    onSubmit: (values: CustomBoxData) => void;
+};
+
+export default function CustomSizeForm({
+    onSubmit,
+}: CustomSizeFormProps) {
+    const [values, setValues] = useState<CustomBoxData>(initialValues);
 
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
+
+        if (
+            !values.length ||
+            !values.width ||
+            !values.height
+        ) {
+            return;
+        }
+
+        onSubmit(values);
     }
 
     return (
@@ -47,7 +68,40 @@ export default function CustomSizeForm() {
                     value={values.height}
                     onChange={(height) => setValues((prev) => ({ ...prev, height }))}
                 />
+
+                <label htmlFor='box-cover' className='block'>
+                    <span className="mb-1.5 block text-sm font-medium text-ink">Тип крышки</span>
+                    <select
+                        id="box-cover"
+                        value={values.cover}
+                        onChange={(event) =>
+                            setValues((prev) => ({
+                                ...prev,
+                                cover: event.target.value as CoverType,
+                            }))
+                        }
+                        className="w-full rounded-xl border border-border bg-surface px-3 py-2.5 text-sm text-ink outline-none transition-[box-shadow,border-color] placeholder:text-muted/70 focus:border-brand-green focus:shadow-[0_0_0_3px_var(--ring)]"
+                    >
+
+                        <option value="">
+                            Выберите тип крышки
+                        </option>
+
+                        <option value="hinged">
+                            Откидная
+                        </option>
+
+                        <option value="separate">
+                            Отдельная
+                        </option>
+
+                        <option value="window">
+                            С окном
+                        </option>
+                    </select>
+                </label>
             </div>
+
 
             <button
                 type="submit"
@@ -55,6 +109,6 @@ export default function CustomSizeForm() {
             >
                 Подобрать коробку
             </button>
-        </form>
+        </form >
     )
 }

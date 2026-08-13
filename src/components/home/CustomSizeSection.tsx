@@ -1,6 +1,30 @@
-import CustomSizeForm from '@/components/forms/CustomSizeForm/CustomSizeForm';
+'use client'
+import CustomSizeForm, { SizeFields } from '@/components/forms/CustomSizeForm/CustomSizeForm';
+import { useState } from 'react';
+import { OrderModal } from '../shared/OrderModal';
+import { ProductCategory, ProductMaterial, ProductType } from '@/types/product';
+import { CustomBoxData } from '@/types/order';
 
 export function CustomSizeSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [customBox, setCustomBox] =
+    useState<CustomBoxData | null>(null);
+
+  const product: ProductType = {
+    id: 'custom-size-box',
+    slug: 'korobka-s-custom-razmerami',
+    title: 'Коробка с пользовательскими размерами',
+    images: [],
+    imagePreview: '',
+    price: 0,
+    currency: '₽',
+    category: 'boxes',
+    materialType: 'micro',
+    material: '',
+    colorId: '',
+    color: ''
+  }
   return (
     <section
       className="animate-fade-up [animation-delay:200ms] overflow-hidden rounded-3xl border border-border bg-surface"
@@ -26,13 +50,27 @@ export function CustomSizeSection() {
               Подбор коробки под ваши размеры
             </h2>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
-              Укажите длину, ширину и высоту — подберём подходящий вариант. Отправка формы
-              появится позже.
+              У нас более 100 различных размеров, которые пока не находятся в нашем каталоге.
+              Укажите длину, ширину и высоту интересующей Вас коробки — подберём подходящий вариант.
             </p>
           </div>
         </div>
 
-        <CustomSizeForm />
+        <CustomSizeForm
+          onSubmit={(values) => {
+            setCustomBox(values);
+            setIsModalOpen(true);
+          }}
+        />
+
+        {customBox && (
+          <OrderModal
+            open={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            product={product}
+            customBox={customBox}
+          />
+        )}
       </div>
     </section>
   );

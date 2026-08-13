@@ -15,11 +15,9 @@ export const companyColumn: NavItem[] = [
 ];
 
 export const informationColumn: NavItem[] = [
-  { label: 'О нас', href: '/' },
   { label: 'Доставка и оплата', href: '/delivery' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Оптовикам', href: '/wholesale' },
-  { label: 'Связаться с нами', href: '/contacts' },
 ];
 
 export const helpColumn: NavItem[] = [{ label: 'Помощь', href: '/' }];

@@ -1,10 +1,20 @@
-import { ProductGallery } from '@/components/Product/ProductGallery/ProductGallery';
-import { ProductDescription } from '@/components/Product/ProductInfo/ProductDescription';
-import { ProductInfo } from '@/components/Product/ProductInfo/ProductInfo';
-import { RelatedProducts } from '@/components/Product/RelatedProducts/RelatedProducts';
+import { ProductGallery } from '@/components/product/ProductGallery/ProductGallery';
+import { ProductDescription } from '@/components/product/ProductInfo/ProductDescription';
+import { ProductInfo } from '@/components/product/ProductInfo/ProductInfo';
+import { RelatedProducts } from '@/components/product/RelatedProducts/RelatedProducts';
 
 import { notFound } from 'next/navigation';
 import { productsByCategory } from '@/data/products';
+
+export function generateStaticParams() {
+  return Object.entries(productsByCategory).flatMap(
+    ([category, products]) =>
+      products.map((product) => ({
+        category,
+        slug: product.slug,
+      })),
+  );
+}
 
 type ProductPageProps = {
   params: Promise<{
@@ -14,7 +24,7 @@ type ProductPageProps = {
 };
 
 
-export default async function ProductPage({params}: ProductPageProps) {
+export default async function ProductPage({ params }: ProductPageProps) {
   const { category, slug } = await params;
 
   const product = productsByCategory[category]?.find(
@@ -30,15 +40,18 @@ export default async function ProductPage({params}: ProductPageProps) {
       <section className="grid gap-10 lg:grid-cols-[820px_1fr]">
         <ProductGallery images={product.images} title={product.title} />
 
-        <ProductInfo />
+        <ProductInfo product={product} />
       </section>
 
       <section className="mt-14">
-        <ProductDescription />
+        {product.description ?
+          (
+            <ProductDescription description={product.description} />
+          ) : null}
       </section>
 
       <section className="mt-16">
-        <RelatedProducts />
+        <RelatedProducts currentProduct={product} />
       </section>
     </div>
   );

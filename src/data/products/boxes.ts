@@ -1,14 +1,14 @@
 import { ProductType } from '@/types/product';
 
 const description = `
-    Самосборная коробка из микрогофрокартона с откидной крышкой,толщина картона:1,5 мм.
+    Самосборная коробка из микрогофрокартона с откидной крышкой,толщина картона:1,5 мм. Собираются без скотча и клея.
     Такие коробки отлично подходят как для фирменной упаковки, так и для отправки почтой. Дополнительная упаковка не потребуется.
     В коробках стильно смотрятся любые ваши изделия: украшения, парфюмерия, одежда, подарочные боксы и многое другое. Ваш клиент будет приятно удивлен, когда увидит перед собой не почтовую коробку с неровным картоном, а гладкую идеальную упаковку.
 `;
 
 export const boxes: ProductType[] = [
   {
-    id: 'bag-1',
+    id: 'box-1',
     slug: 'korobka-s-otkidnoi-kryshkoi-10x8x3-craft',
     title: 'Коробка с откидной крышкой 10x8x3 см крафт',
     images: ['/bestSellers/10x8x3.jpeg'],
@@ -19,6 +19,7 @@ export const boxes: ProductType[] = [
     materialType: 'micro',
     material: 'Микрогофрокартон',
     colorId: 'brown',
+    color: 'Крафт',
     cover: 'hinged',
     sizes: {
       l: 100,
@@ -29,7 +30,7 @@ export const boxes: ProductType[] = [
     description: description,
   },
   {
-    id: 'bag-2',
+    id: 'box-2',
     slug: 'korobka-s-otkidnoi-kryshkoi-8x6x2-craft',
     title: 'Коробка с откидной крышкой 8x6x2 см крафт',
     images: ['/bestSellers/8x6x2.jpeg'],
@@ -40,6 +41,7 @@ export const boxes: ProductType[] = [
     materialType: 'micro',
     material: 'Микрогофрокартон',
     colorId: 'brown',
+    color: 'Крафт',
     cover: 'hinged',
     sizes: {
       l: 80,
@@ -50,7 +52,7 @@ export const boxes: ProductType[] = [
     description: description,
   },
   {
-    id: 'bag-3',
+    id: 'box-3',
     slug: 'korobka-s-otkidnoi-kryshkoi-15x15x4,5-white',
     title: 'Коробка с откидной крышкой 15x15x4,5 см белая',
     images: ['/bestSellers/15x15x4.5_white.jpg'],
@@ -61,6 +63,7 @@ export const boxes: ProductType[] = [
     materialType: 'micro',
     material: 'Микрогофрокартон',
     colorId: 'white',
+    color: 'Белый',
     cover: 'hinged',
     sizes: {
       l: 150,
@@ -71,7 +74,7 @@ export const boxes: ProductType[] = [
     description: description,
   },
   {
-    id: 'bag-4',
+    id: 'box-4',
     slug: 'korobka-s-otkidnoi-kryshkoi-8x6x2-white',
     title: 'Коробка с откидной крышкой 8x6x2 см белая',
     images: ['/bestSellers/8x6x2_white.jpeg'],
@@ -82,6 +85,7 @@ export const boxes: ProductType[] = [
     materialType: 'micro',
     material: 'Микрогофрокартон',
     colorId: 'white',
+    color: 'Белый',
     cover: 'hinged',
     sizes: {
       l: 80,
@@ -92,7 +96,7 @@ export const boxes: ProductType[] = [
     description: description,
   },
   {
-    id: 'bag-5',
+    id: 'box-5',
     slug: 'korobka-s-otkidnoi-kryshkoi-14,8x5,5x4-white',
     title: 'Коробка с откидной крышкой 14,8x5,5x4 см белая',
     images: ['/bestSellers/14.8x5.5x4_white.jpg'],
@@ -103,6 +107,7 @@ export const boxes: ProductType[] = [
     materialType: 'micro',
     material: 'Микрогофрокартон',
     colorId: 'white',
+    color: 'Белый',
     cover: 'hinged',
     sizes: {
       l: 148,
@@ -113,7 +118,7 @@ export const boxes: ProductType[] = [
     description: description,
   },
   {
-    id: 'bag-6',
+    id: 'box-6',
     slug: 'korobka-s-otkidnoi-kryshkoi-5x5x3-white',
     title: 'Коробка с откидной крышкой 5x5x3 см белая',
     images: ['/bestSellers/5x5x3_white.jpg'],
@@ -124,6 +129,7 @@ export const boxes: ProductType[] = [
     materialType: 'micro',
     material: 'Микрогофрокартон',
     colorId: 'white',
+    color: 'Белый',
     cover: 'hinged',
     sizes: {
       l: 50,
@@ -134,7 +140,7 @@ export const boxes: ProductType[] = [
     description: description,
   },
   {
-    id: 'bag-7',
+    id: 'box-7',
     slug: 'korobka-s-otkidnoi-kryshkoi-8x6x3-white',
     title: 'Коробка с откидной крышкой 8x6x3 см белая',
     images: ['/bestSellers/8x6x3_white.jpg'],
@@ -145,6 +151,7 @@ export const boxes: ProductType[] = [
     materialType: 'micro',
     material: 'Микрогофрокартон',
     colorId: 'white',
+    color: 'Белый',
     cover: 'hinged',
     sizes: {
       l: 80,
@@ -155,7 +162,7 @@ export const boxes: ProductType[] = [
     description: description,
   },
   {
-    id: 'bag-8',
+    id: 'box-8',
     slug: 'korobka-s-otkidnoi-kryshkoi-10x4x2-white',
     title: 'Коробка с откидной крышкой 10x4x2 см белая',
     images: ['/boxes/10x4x2_white.jpg'],
@@ -166,6 +173,7 @@ export const boxes: ProductType[] = [
     materialType: 'micro',
     material: 'Микрогофрокартон',
     colorId: 'white',
+    color: 'Белый',
     cover: 'hinged',
     sizes: {
       l: 100,
