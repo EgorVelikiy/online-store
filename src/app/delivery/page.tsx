@@ -1,3 +1,4 @@
+import { getAssetPath } from '@/lib/getAssetPath';
 import Image from 'next/image';
 
 export default function DeliveryPage() {
@@ -28,7 +29,7 @@ export default function DeliveryPage() {
 
       <div className="flex justify-center">
         <Image
-          src="/main/delivery.jpg"
+          src={getAssetPath("/main/delivery.jpg")}
           alt="Доставка"
           width={800}
           height={400}

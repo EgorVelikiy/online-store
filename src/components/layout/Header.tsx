@@ -5,6 +5,7 @@ import { ChevronDown } from 'lucide-react';
 import { mainNav } from '@/constants/navigation';
 import { cn } from '@/lib/utils';
 import { CatalogDropdown } from '../catalog/CatalogDropDown/CatalogDropdown';
+import { getAssetPath } from '@/lib/getAssetPath';
 
 export function Header() {
   return (
@@ -12,7 +13,7 @@ export function Header() {
       <div className="mx-auto flex max-w-screen-2xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
         <Link href="/" className="shrink-0 transition-opacity hover:opacity-90">
           <Image
-            src="/main/logoMain.png"
+            src={getAssetPath("/main/logoMain.png")}
             alt="FAMILY kraft mag"
             width={160}
             height={56}

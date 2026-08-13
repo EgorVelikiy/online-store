@@ -1,5 +1,6 @@
 'use client';
 
+import { getAssetPath } from '@/lib/getAssetPath';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -15,7 +16,7 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
     <section className="flex flex-col gap-4">
       <div className="relative aspect-square overflow-hidden rounded-3xl border border-border bg-surface p-10">
         <Image
-          src={images[selectedImage]}
+          src={getAssetPath(images[selectedImage])}
           alt={title}
           fill
           priority
@@ -37,7 +38,7 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
               }`}
             >
               <Image
-                src={image}
+                src={getAssetPath(image)}
                 alt={`${title} ${index + 1}`}
                 fill
                 sizes="96px"

@@ -1,4 +1,5 @@
 import { mainCategories } from '@/constants/categories';
+import { getAssetPath } from '@/lib/getAssetPath';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -29,7 +30,7 @@ export function CategoryGrid() {
             >
               <div className="relative aspect-square overflow-hidden">
                 <Image
-                  src={category.image}
+                  src={getAssetPath(category.image)}
                   alt={category.title}
                   fill
                   sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"

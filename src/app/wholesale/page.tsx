@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/getAssetPath';
 
 export default function WholesalePage() {
   return (
@@ -24,7 +25,7 @@ export default function WholesalePage() {
 
         <div className="overflow-hidden rounded-3xl">
           <Image
-            src="/main/optovikam.jpg"
+            src={getAssetPath("/main/optovikam.jpg")}
             alt="Оптовые поставки коробок"
             width={540}
             height={280}

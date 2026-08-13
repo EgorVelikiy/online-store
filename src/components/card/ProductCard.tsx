@@ -1,3 +1,4 @@
+import { getAssetPath } from '@/lib/getAssetPath';
 import { ProductType } from '@/types/product';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,7 +12,7 @@ export function ProductCard({ product }: { product: ProductType }) {
       >
         <div className="relative aspect-square overflow-hidden">
           <Image
-            src={product.imagePreview}
+            src={getAssetPath(product.imagePreview)}
             alt={product.title}
             fill
             sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
