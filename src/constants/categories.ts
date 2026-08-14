@@ -9,13 +9,13 @@ export const mainCategories: Category[] = [
     image: '/Categories/CategoryBoxes.jpeg',
     href: '/catalog/boxes' as Route,
   },
-  {
-    slug: 'packages',
-    title: 'Пакеты',
-    description: 'Крафт-пакеты с ручками и без',
-    image: '/Categories/CategoryBags.jpg',
-    href: '/catalog/packages' as Route,
-  },
+  // {
+  //   slug: 'packages',
+  //   title: 'Пакеты',
+  //   description: 'Крафт-пакеты с ручками и без',
+  //   image: '/Categories/CategoryBags.jpg',
+  //   href: '/catalog/packages' as Route,
+  // },
   {
     slug: 'filler',
     title: 'Бумажный наполнитель',
