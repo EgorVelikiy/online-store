@@ -21,14 +21,10 @@ export function ModalContent({
         relative
         w-full
         max-w-lg
-        rounded-3xl
+        rounded-2xl
         bg-surface
-        p-8
+        p-4
         shadow-2xl
-        animate-in
-        fade-in
-        zoom-in-95
-        duration-200
       "
     >
       <button

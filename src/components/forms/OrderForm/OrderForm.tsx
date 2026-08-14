@@ -48,7 +48,7 @@ export function OrderForm({
   return (
     <form
       onSubmit={handleSubmit(submitHandler)}
-      className="mt-6 space-y-4"
+      className="mt-2 space-y-2"
     >
       <div>
         <h2 className="text-2xl font-semibold">
@@ -151,7 +151,7 @@ export function OrderForm({
           <span className="font-medium">Комментарий</span>
 
           <textarea
-            rows={4}
+            rows={3}
             placeholder="Дополнительная информация..."
             {...register('comment')}
             className="resize-none rounded-xl border border-border px-4 py-3 outline-none transition focus:border-brand-red"
@@ -159,8 +159,8 @@ export function OrderForm({
         </label>
       </div>
 
-      <fieldset className="space-y-2">
-        <legend className="mb-3 font-semibold">
+      <fieldset className="flex flex-wrap items-center gap-6 mb-4">
+        <legend className="mb-4 mr-3 font-semibold">
           Как с вами связаться?
         </legend>
 
