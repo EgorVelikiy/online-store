@@ -1,11 +1,6 @@
 import type { NavItem } from '@/types/navLinks';
 import type { Route } from 'next';
 
-export const BASE_PATH =
-  process.env.NODE_ENV === 'production'
-    ? '/online-store'
-    : '';
-
 export type { NavItem };
 export const mainNav: NavItem[] = [
   { label: 'Доставка и оплата', href: '/delivery' },

@@ -49,4 +49,5 @@ export type ProductType = {
   isPopular?: boolean;
 
   description?: string;
+
 };

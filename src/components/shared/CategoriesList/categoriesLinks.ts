@@ -7,5 +7,5 @@ export const DropDownLinks: NavItem[] = [
   { label: 'Бумага тишью', href: '/catalog/tissue' as Route },
   { label: 'Бумажный наполнитель', href: '/catalog/filler' as Route },
   { label: 'Ленты, шпагат, бирки', href: '/catalog/ribbons' as Route },
-  { label: 'Аксессуары для упаковки', href: '/catalog/accessories' as Route },
+  // { label: 'Аксессуары для упаковки', href: '/catalog/accessories' as Route },
 ];

@@ -46,9 +46,9 @@ export const catalogConfig = {
     products: [],
   },
 
-  accessories: {
-    title: 'Акссесуары для упаковки',
-    filters: accessoriesFilters,
-    products: [],
-  },
+  // accessories: {
+  //   title: 'Акссесуары для упаковки',
+  //   filters: accessoriesFilters,
+  //   products: [],
+  // },
 } satisfies Record<string, CatalogConfigType>;

@@ -3,12 +3,14 @@ import { boxes } from "./boxes";
 import { packages } from "./packages";
 import { tissue } from "./tissue";
 import { filler } from "./filler";
+import { ribbons } from "./ribbons";
 
 export const productsByCategory: Record<string, ProductType[]> = {
   boxes,
   packages,
   tissue,
-  filler
+  filler,
+  ribbons
 }
 
 export const products = Object.values(productsByCategory).flat();
