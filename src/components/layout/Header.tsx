@@ -3,9 +3,8 @@ import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 
 import { mainNav } from '@/constants/navigation';
-import { cn } from '@/lib/utils';
+import { cn, getAssetPath } from '@/lib/utils';
 import { CatalogDropdown } from '../catalog/CatalogDropDown/CatalogDropdown';
-import { getAssetPath } from '@/lib/getAssetPath';
 
 export function Header() {
   return (

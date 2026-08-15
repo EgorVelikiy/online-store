@@ -1,7 +1,7 @@
 'use client';
 
-import { getAssetPath } from '@/lib/getAssetPath';
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
 import { useState } from 'react';
 
 type ProductGalleryProps = {

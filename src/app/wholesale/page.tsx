@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getAssetPath } from '@/lib/getAssetPath';
+import { getAssetPath } from '@/lib/utils';
 
 export default function WholesalePage() {
   return (

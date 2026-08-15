@@ -1,4 +1,4 @@
-import { getAssetPath } from '@/lib/getAssetPath';
+import { getAssetPath } from '@/lib/utils';
 import Image from 'next/image';
 
 export default function DeliveryPage() {

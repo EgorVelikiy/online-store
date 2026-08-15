@@ -5,8 +5,8 @@ import { OrderFormData } from '@/components/shared/schemas/orderSchema';
 import { ProductType } from '@/types/product';
 import { Modal } from './OrderModal';
 import { openWhatsApp } from '@/lib/whatsApp';
-import { openMax } from '@/lib/max';
 import { CustomBoxData } from '@/types/order';
+import { sendOrder } from '@/lib/utils';
 
 type OrderModalProps = {
   open: boolean;
@@ -46,14 +46,9 @@ export function OrderModal({
     };
 
     switch (data.contactMethod) {
+      case 'max':
       case 'email': {
-        const response = await fetch('/api/order', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(payload),
-        });
+        const response = await sendOrder(payload)
 
         if (!response.ok) {
           throw new Error('Ошибка отправки заявки');
@@ -64,10 +59,6 @@ export function OrderModal({
 
       case 'whatsapp':
         openWhatsApp(payload);
-        break;
-
-      case 'max':
-        openMax(payload)
         break;
     }
 

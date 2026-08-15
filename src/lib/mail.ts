@@ -16,11 +16,7 @@ const transporter = nodemailer.createTransport({
 });
 
 export async function sendOrderEmail(payload: OrderPayload) {
-  console.log('sendMail start');
-
-  console.log(JSON.stringify(payload, null, 2));
-
-  const info = await transporter.sendMail({
+  await transporter.sendMail({
     from: process.env.SMTP_USER,
 
     to: process.env.COMPANY_EMAIL,
@@ -53,7 +49,4 @@ export async function sendOrderEmail(payload: OrderPayload) {
       <p>${payload.order.comment || '-'}</p>
     `,
   });
-
-  console.log('sendMail success');
-  console.log(info);
 }

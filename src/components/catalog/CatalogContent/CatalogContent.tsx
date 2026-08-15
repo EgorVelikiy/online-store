@@ -33,6 +33,16 @@ export function CatalogContent({ config }: { config: CatalogConfigType }) {
             </h2>
           </div>
 
+          <div className="mb-6 flex gap-3 rounded-xl border border-brand-red/20 bg-brand-red/5 px-4 py-3 text-sm leading-relaxed text-ink sm:px-5">
+            <span className="mt-0.5 shrink-0 text-brand-red">ⓘ</span>
+
+            <p>
+              <span className="font-semibold">Обратите внимание:</span>{' '}
+              на сайте представлен не весь ассортимент и доступны не все размеры.
+              Если вы не нашли нужный товар или размер, уточните наличие у менеджера.
+            </p>
+          </div>
+
           <ProductGrid products={filteredProducts} />
         </div>
       </div>

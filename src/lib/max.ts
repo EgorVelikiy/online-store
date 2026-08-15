@@ -1,32 +1,75 @@
 import { OrderPayload } from '@/types/order';
 
-export function createMaxMessage(
-  payload: OrderPayload
-) {
-  return `
-Здравствуйте!
+const MAX_API_URL = 'https://platform-api2.max.ru';
 
-Хочу оформить заказ.
+export async function sendMaxMessage(payload: OrderPayload) {
+  console.log('MAX START');
+  const token = process.env.MAX_BOT_TOKEN;
+  const chatId = process.env.MAX_CHAT_ID;
 
-Товар: ${payload.product.title}
-Количество: ${payload.order.quantity}
-Цена: ${payload.product.price}
+  if (!token) {
+    throw new Error('MAX_BOT_TOKEN is not configured');
+  }
 
-Имя: ${payload.customer.name}
-Телефон: ${payload.customer.phone}
-Email: ${payload.customer.email || '-'}
+  if (!chatId) {
+    throw new Error('MAX_CHAT_ID is not configured');
+  }
+
+  const text = `
+Новая заявка с сайта
+
+Товар:
+${payload.product.title}
+
+Количество:
+${payload.order.quantity}
+
+Цена:
+${payload.product.price}
+
+Клиент:
+${payload.customer.name}
+
+Телефон:
+${payload.customer.phone}
+
+Email:
+${payload.customer.email || '-'}
+
+Способ связи:
+${payload.order.contactMethod}
 
 Комментарий:
 ${payload.order.comment || '-'}
 `.trim();
-}
 
-export function openMax(
-  payload: OrderPayload
-) {
-  const message = createMaxMessage(payload);
+  const response = await fetch(
+    `${MAX_API_URL}/messages?chat_id=${chatId}`,
+    {
+      method: 'POST',
 
-  const url = `https://max.ru/:share?text=${encodeURIComponent(message)}`;
+      headers: {
+        Authorization: token,
+        'Content-Type': 'application/json',
+      },
 
-  window.open(url, '_blank');
+      body: JSON.stringify({
+        text,
+      }),
+    },
+  );
+
+  console.log('MAX STATUS:', response.status);
+
+  if (!response.ok) {
+    const error = await response.text();
+
+    console.error('MAX API error:', error);
+
+    throw new Error(
+      'Не удалось отправить сообщение в MAX',
+    );
+  }
+
+  return response.json();
 }

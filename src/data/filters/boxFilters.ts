@@ -12,16 +12,8 @@ export const boxFilters: FilterGroup[] = [
     type: 'checkbox',
     options: [
       {
-        id: 'paperboard',
-        label: 'Картон',
-      },
-      {
         id: 'micro',
         label: 'Микрогофрокартон',
-      },
-      {
-        id: 'paperAndPlastic',
-        label: 'Картон и пластик',
       },
     ],
   },
@@ -37,14 +29,6 @@ export const boxFilters: FilterGroup[] = [
       {
         id: 'white',
         label: 'Белый',
-      },
-      {
-        id: 'black',
-        label: 'Черный',
-      },
-      {
-        id: 'colors',
-        label: 'Цветной',
       },
     ],
   },

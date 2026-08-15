@@ -1,4 +1,4 @@
-import { getAssetPath } from '@/lib/getAssetPath';
+import { getAssetPath } from '@/lib/utils';
 import { ProductType } from '@/types/product';
 import Image from 'next/image';
 import Link from 'next/link';

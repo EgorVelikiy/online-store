@@ -8,6 +8,7 @@ import { ribbonFilters } from './ribbonFilters';
 import { tissueFilters } from './tissueFilters';
 import { tissue } from '../products/tissue';
 import { filler } from '../products/filler';
+import { ribbons } from '../products/ribbons';
 
 export type CatalogConfigType = {
   title: string;
@@ -43,7 +44,7 @@ export const catalogConfig = {
   ribbons: {
     title: 'Ленты, шпагаты, бирки',
     filters: ribbonFilters,
-    products: [],
+    products: ribbons,
   },
 
   // accessories: {
