@@ -1,7 +1,7 @@
-import { ProductGallery } from '@/components/Product/ProductGallery/ProductGallery';
-import { ProductDescription } from '@/components/Product/ProductInfo/ProductDescription';
-import { ProductInfo } from '@/components/Product/ProductInfo/ProductInfo';
-import { RelatedProducts } from '@/components/Product/RelatedProducts/RelatedProducts';
+import { ProductGallery } from '@/components/product/ProductGallery/ProductGallery';
+import { ProductDescription } from '@/components/product/ProductInfo/ProductDescription';
+import { ProductInfo } from '@/components/product/ProductInfo/ProductInfo';
+import { RelatedProducts } from '@/components/product/RelatedProducts/RelatedProducts';
 
 import { notFound } from 'next/navigation';
 import { productsByCategory } from '@/data/products';
