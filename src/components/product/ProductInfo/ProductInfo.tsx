@@ -21,11 +21,11 @@ export function ProductInfo({ product }: ProductInfoProps) {
           {product.title}
         </h1>
 
-        <div className="mt-6">
+        {/* <div className="mt-6">
           <span className="text-4xl font-bold text-brand-red">
             От {product.price} {product.currency}
           </span>
-        </div>
+        </div> */}
 
         <div className="mt-8 rounded-2xl border border-border bg-surface p-6">
           <h2 className="mb-4 text-lg font-semibold">

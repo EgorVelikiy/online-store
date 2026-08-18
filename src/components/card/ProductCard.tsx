@@ -25,13 +25,13 @@ export function ProductCard({ product }: { product: ProductType }) {
             {product.title}
           </h3>
 
-          <div className="mt-auto pt-4">
+          {/* <div className="mt-auto pt-4">
             <div className="flex items-end gap-2">
               <span className="text-xl font-bold text-brand-red">
                 От {product.price} {product.currency}
               </span>
             </div>
-          </div>
+          </div> */}
           <button
             type="button"
             className="mt-4 inline-flex h-11 w-full items-center justify-center rounded-full bg-brand-red text-sm font-semibold text-white transition hover:bg-brand-red/90 active:scale-[0.98]"
