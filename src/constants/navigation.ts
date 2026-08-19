@@ -6,6 +6,7 @@ export const mainNav: NavItem[] = [
   { label: 'Доставка и оплата', href: '/delivery' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Оптовикам', href: '/wholesale' },
+  { label: 'Прайс-лист', href: '/price-list' },
   { label: 'Контакты', href: '/contacts' },
 ];
 
